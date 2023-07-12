@@ -1,0 +1,55 @@
+<!-- login.ejs -->
+<%- include("./partials/navbar.ejs") %>
+<%- include("./partials/header.ejs") %>
+
+<style>
+  body {
+    background-color: #f2f2f2; /* Light gray background color */
+  }
+
+  .container {
+    background-color: #ffffff; /* White container background color */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-primary {
+    background-color: #1a171c; /* Violet button background color */
+    border-color: #1a171c; /* Violet button border color */
+  }
+
+  /* Custom background UI */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, #c9c9c9, #f2f2f2);
+    z-index: -1;
+    opacity: 0.2;
+  }
+</style>
+
+<div class="container">
+  <div class="row mt-5">
+    <h1>Login Page</h1>
+    <hr />
+    <form method="POST" action="/login">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+      </div>
+      <hr>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+</div>
+
+<%- include("./partials/footer.ejs") %>
